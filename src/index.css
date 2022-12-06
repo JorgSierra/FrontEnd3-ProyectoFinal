@@ -27,7 +27,7 @@ nav{
   display: flex;
   width: 100vw;
   justify-content: flex-end;
- 
+  padding: 1rem;
   background-color: rgb(248, 171, 171);
 }
 
