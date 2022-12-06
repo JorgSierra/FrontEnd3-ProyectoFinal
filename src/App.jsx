@@ -12,13 +12,13 @@ import Favs from './Routes/Favs'
 function App() {
   return (
       <div className="App"> 
-      <Navbar/>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/favs" element={<Favs />}></Route>
-          </Routes>
-      <Footer/>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/favs" element={<Favs />}></Route>
+        </Routes>
+        <Footer/>
       </div>
   );
 }
