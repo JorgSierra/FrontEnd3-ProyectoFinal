@@ -16,11 +16,7 @@ export function APIContextProvider({ children }) {
     fetchData();
   }, []);
   return (
-    <APIContext.Provider
-      value={{
-        users
-      }}
-    >
+    <APIContext.Provider value={{ users }}>
       {children}
     </APIContext.Provider>
   );
