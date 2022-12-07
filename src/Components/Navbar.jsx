@@ -1,8 +1,9 @@
-import { AppBar, Avatar, Box, Button, Container, FormControlLabel, IconButton, Link, Menu, MenuItem, styled, Switch, Toolbar, Tooltip, Typography } from '@mui/material'
+import { AppBar, Avatar, Box, Button, Container, FormControlLabel, IconButton, Menu, MenuItem, styled, Switch, Toolbar, Tooltip, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import { ContextGlobal } from './utils/global.context'
+import { Link } from 'react-router-dom';
 
 
 
@@ -107,7 +108,6 @@ const Navbar = () => {
               variant="h6"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
@@ -181,7 +181,7 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <React.Fragment>
-                  <Link href={`/${page}`} underline='none'>
+                  <Link to={(page === 'home') ? '/':`/${page}`} underline='none'>
                     <Button
                       key={page}
                       onClick={(e) => handleCloseNavMenu(page, e)} //mapea botones del nav para pc 

@@ -48,9 +48,7 @@ export const ContextProvider = ({ children }) => {
 
   return (
     <ContextGlobal.Provider value={ contextValues }>
-      <div class={state}>
       { children }
-      </div>
     </ContextGlobal.Provider>
   );
 };
