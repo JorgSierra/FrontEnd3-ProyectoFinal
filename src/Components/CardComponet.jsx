@@ -9,6 +9,7 @@ const CardComponet = ({ item }) => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   const addFav = ()=>{
+    console.log("funciona")
     /* Ademas deberan integrar la logica para guardar cada Card en el localStorage */
     // Aqui iria la logica para agregar la Card en el localStorage
   }
