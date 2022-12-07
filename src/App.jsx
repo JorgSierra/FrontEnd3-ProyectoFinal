@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Template />}>
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/favs" element={<Favs />}></Route>
+          <Route path="/fav" element={<Favs />}></Route>
           <Route path="/detail" element={<Detail />}></Route>
         </Route>
       </Routes>

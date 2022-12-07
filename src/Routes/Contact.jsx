@@ -10,8 +10,8 @@ const Contact = () => {
 
   return (
     <Fragment>
-      <Typography variant='h4'>¿Want to know more?</Typography> 
-      <Typography variant='p'>Send us your questions and we will contact yo</Typography> 
+      <Typography variant='h4' sx={{marginTop: '20px'}}>¿Want to know more?</Typography> 
+      <Typography variant='h6'>Send us your questions and we will contact yo</Typography> 
       <Form/>
     </Fragment>
   )
