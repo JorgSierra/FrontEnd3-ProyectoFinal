@@ -1,5 +1,5 @@
-import { CheckBox, Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Box, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Box, Card, CardActions, CardContent, CardMedia, Checkbox, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import doctor from '../images/doctor.jpg'
@@ -39,8 +39,8 @@ const CardComponet = ({ item }) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Box>
-              <CheckBox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+            <Box component='div'>
+            <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
             </Box>
             {/* <Button size="small">Details</Button> */}
             <Link to={`/detail/${item.id}`}>Detail</Link>

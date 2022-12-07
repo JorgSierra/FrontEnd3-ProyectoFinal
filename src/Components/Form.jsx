@@ -8,7 +8,29 @@ const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
 
   const [inputValues, setInputValues] = useState({})
-  console.log(inputValues)
+  const [isValid, setIsValid] = useState(true)
+
+  const nameValidation =(e)=>{
+    if(e.target.value.length >= 1 && e.target.value.length <= 5){
+      setIsValid(false)
+      console.log(e.target.value.length);
+      console.log(isValid);
+    }
+    else{
+      setIsValid(true)
+    }
+  }
+
+  const emailValidation = (e) => {
+    if(e.target.value.length === RegExp(`^[^@]+@[^@]+[a-zA-Z]{2,}$`)){
+      setIsValid(false)
+      console.log(e.target.value.length);
+      console.log(isValid);
+    }
+    else{
+      setIsValid(true)
+    }
+  }
 
   const registrar = () => {
     axios.post(`http://localhost:8080/odontologo`, inputValues)
@@ -22,22 +44,24 @@ const Form = () => {
     <Typography variant='h4' sx={{ marginTop: '20px' }}>{'Contact'}</Typography>
     <FormGroup sx={{ width: '300px', marginTop: '20px', gap: '10px' }}>
       <FormControl>
-        <InputLabel>{'Full name'}</InputLabel>
+        <InputLabel error ={!isValid}>{isValid ? 'Full name' : 'Error'}</InputLabel>
         <Input
+          error = {!isValid}
           name='Full name'
-          onChange={(e) => setInputValues({ ...inputValues, [e.target.name]: e.target.value })}
+          onChange={(e) => nameValidation(e)}
         />
-        <FormHelperText></FormHelperText>
+        <FormHelperText error ={!isValid}>{isValid ? '' : 'El nombre debe contener mas de 5 letras'}</FormHelperText>
       </FormControl>
       <FormControl>
-        <InputLabel>{'Email'}</InputLabel>
+        <InputLabel error ={!isValid}>{isValid ? 'Email' : 'Error'}</InputLabel>
         <Input
+          error = {!isValid}
           name='Email'
-          onChange={(e) => setInputValues({ ...inputValues, [e.target.name]: e.target.value })}
+          type='email'
+          onChange={(e) => emailValidation(e)}
         />
-        <FormHelperText></FormHelperText>
+        <FormHelperText error ={!isValid}>{isValid ? '' : 'Debe ingresar un correo valido'}</FormHelperText>
       </FormControl>
-      
       <Button onClick={registrar} variant="contained" endIcon={<SendIcon />}>Send</Button>
     </FormGroup>
   </Fragment>
