@@ -219,7 +219,7 @@ const Navbar = () => {
             <FormControlLabel
               control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
               label=''
-              onClick={dispatch}
+              onClick={() => dispatch ({ type: state.nextState })}
             />
 
             <Box sx={{ flexGrow: 0 }}>
