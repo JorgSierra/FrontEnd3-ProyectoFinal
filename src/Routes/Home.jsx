@@ -6,13 +6,15 @@ import { ContextGlobal } from '../Components/utils/global.context';
 
 const Home = () => {
 
-  const { data } = useContext(ContextGlobal);
+  const { data, state } = useContext(ContextGlobal);
 
   console.log(data);
 
   return (
     <main className="home" >
       <h1>Home</h1>
+      <p>Current state: {state.currentState}</p>
+      <p>Next state: {state.nextState}</p>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}
       </div>
