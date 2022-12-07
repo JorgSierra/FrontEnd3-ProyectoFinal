@@ -9,18 +9,15 @@ import Template from "./Components/Template";
 
 function App() {
   return (
-    <div className="App">
-
+    
       <Routes>
         <Route path="/" element={<Template />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/fav" element={<Favs />}></Route>
           <Route path="/detail" element={<Detail />}></Route>
         </Route>
       </Routes>
-
-    </div>
   );
 }
 
