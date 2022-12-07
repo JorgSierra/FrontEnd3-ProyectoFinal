@@ -6,7 +6,7 @@ import doctor from '../images/doctor.jpg'
 
 const CardComponet = ({ item }) => {
 
-  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+  const label = { inputprops: { 'aria-label': 'Checkbox demo' } };
 
   const addFav = ()=>{
     console.log("funciona")

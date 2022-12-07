@@ -180,7 +180,7 @@ const Navbar = () => {
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
-                <React.Fragment>
+                <React.Fragment key={page}>
                   <Link to={(page === 'home') ? '/':`/${page}`} underline='none'>
                     <Button
                       key={page}

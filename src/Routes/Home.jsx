@@ -26,11 +26,10 @@ const Home = () => {
         margin: '0 auto'
       }}>
       {data.map(item => (
-        <CardComponet item={item}/>
+        <CardComponet key={item.id} item={item}/>
       ))}
     </Box>
-    </main >
-
+  </main >
   )
 }
 
