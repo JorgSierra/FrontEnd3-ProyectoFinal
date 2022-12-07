@@ -60,7 +60,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const Navbar = () => {
 
-  const pages = ['home', 'contact', 'fav'];
+  const pages = ['home', 'contact', 'fav', 'detail'];
   const { data, state, dispatch } = useContext(ContextGlobal);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
