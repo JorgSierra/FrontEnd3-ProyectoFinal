@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const initialState = {
   currentState: "Light", 
-  nextState: "Dark" 
+  nextState: "Dark"
 }
 
 export const ContextGlobal = createContext();
@@ -27,7 +27,7 @@ const themeFunction = (state, { type }) => {
 
 export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  const [state, dispatch] = useReducer(themeFunction, initialState)
+  const [state, dispatch] = useReducer(themeFunction, initialState);
 
   const contextValues = {
     state,
@@ -48,7 +48,7 @@ export const ContextProvider = ({ children }) => {
 
   return (
     <ContextGlobal.Provider value={ contextValues }>
-      {children}
+      { children }
     </ContextGlobal.Provider>
   );
 };
