@@ -32,7 +32,7 @@ const CardComponet = ({ item }) => {
       </CardContent>
       <CardActions>
         <Box>
-          <CheckBox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+          <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
         </Box>
           <Link to={`/detail/${item.id}`}>Detail</Link>
       </CardActions>
