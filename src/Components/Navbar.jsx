@@ -194,30 +194,12 @@ const Navbar = () => {
                       {page}
                     </Button>
                   </Link>
-
-
-                  {/* <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      'aria-labelledby': 'basic-button',
-                    }}
-                  >
-                    {crud.map(item => (
-                      <MenuItem key={item}>
-                        <Link href={`/${item}`} underline='none'  >{item}</Link>
-                      </MenuItem>
-                    ))}
-
-                  </Menu> */}
                 </React.Fragment>
               ))}
             </Box>
 
             <FormControlLabel
-              control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+              control={<MaterialUISwitch sx={{ m: 1 }}/>}
               label=''
               onClick={() => dispatch ({ type: state.nextState })}
             />
