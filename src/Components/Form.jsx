@@ -1,5 +1,4 @@
-import { Button, FormControl, FormGroup, FormHelperText, Input, InputLabel, Typography } from '@mui/material'
-import axios from 'axios'
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, FormGroup, FormHelperText, Input, InputLabel, Typography } from '@mui/material'
 import React, { Fragment, useState } from 'react'
 import SendIcon from '@mui/icons-material/Send';
 import { useEffect } from 'react';
@@ -8,11 +7,13 @@ import { useEffect } from 'react';
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
 
-  const [inputValues, setInputValues] = useState({});
+  const [inputValues, setInputValues] = useState('');
   const [nameIsValid, setNameIsValid] = useState(true);
   const [emailIsValid, setEmailIsValid] = useState(true);
-  const [enableButton, setEnableButton] = useState(false);
-  
+  const [disabledButton, setdisabledButton] = useState(true);
+  const [open, setOpen] = useState(false);
+
+
   const nameValidation = (e) => {
     if (e.target.value.length >= 1 && e.target.value.length <= 5) {
       setNameIsValid(false)
@@ -21,6 +22,7 @@ const Form = () => {
     }
     else {
       setNameIsValid(true);
+      setInputValues(e.target.value)
     }
   }
 
@@ -29,7 +31,7 @@ const Form = () => {
     const text = e.target.value;
     const result = reg.test(text);
 
-    if(!result && e.target.value.length ){
+    if (!result && e.target.value.length) {
       setEmailIsValid(false)
     }
     else {
@@ -37,20 +39,30 @@ const Form = () => {
     }
   }
 
-  const registrar = () => {
-    axios.post(`http://localhost:8080/odontologo`, inputValues)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err.data))
+  useEffect(() => {
+    if (nameIsValid && emailIsValid) {
+      setdisabledButton(false);
+    }
+    else {
+      setdisabledButton(true);
+    }
+  }, [nameIsValid, emailIsValid])
+
+  const handleClickOpen = () => {
+    setOpen(true)
   }
 
-  useEffect(()=>{
-    if(nameIsValid && emailIsValid){
-      setEnableButton(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    const inputName = document.querySelector('#name').value;
+    const inputEmail = document.querySelector('#email').value;
+    if (inputName === '' || inputEmail === '') {
+      setdisabledButton(true)
     }
-    else{
-      setEnableButton(true);
-    }
-  },[nameIsValid, emailIsValid])
+  }, [nameIsValid, emailIsValid])
 
 
   return (
@@ -60,6 +72,7 @@ const Form = () => {
         <FormControl>
           <InputLabel error={!nameIsValid}>{nameIsValid ? 'Full name' : 'Error'}</InputLabel>
           <Input
+            id='name'
             error={!nameIsValid}
             name='Full name'
             onChange={(e) => nameValidation(e)}
@@ -69,6 +82,7 @@ const Form = () => {
         <FormControl>
           <InputLabel error={!emailIsValid}>{emailIsValid ? 'Email' : 'Error'}</InputLabel>
           <Input
+            id='email'
             error={!emailIsValid}
             name='Email'
             coomponent='email'
@@ -76,8 +90,18 @@ const Form = () => {
           />
           <FormHelperText error={!emailIsValid}>{emailIsValid ? '' : 'Debe ingresar un correo valido'}</FormHelperText>
         </FormControl>
-        <Button disabled={enableButton} onClick={registrar} variant="contained" endIcon={<SendIcon />}>Send</Button>
+        <Button disabled={disabledButton} onClick={handleClickOpen} variant="contained" endIcon={<SendIcon />}>Send</Button>
       </FormGroup>
+
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>{`${inputValues} te contactaremos lo antes posible via email`}</DialogTitle>
+        <DialogContent>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Aceptar</Button>
+        </DialogActions>
+      </Dialog>
+
     </Fragment>
   );
 };
