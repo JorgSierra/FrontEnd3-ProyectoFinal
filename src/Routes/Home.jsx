@@ -7,7 +7,7 @@ const Home = () => {
   const { data} = useContext(ContextGlobal);
 
   return (
-    <main className="home" >
+    <>
       <h1>Home</h1>
       <Box sx={{
           display: 'flex',
@@ -22,7 +22,7 @@ const Home = () => {
           <CardComponet key={item.id} item={item}/>
         ))}
       </Box>
-  </main >
+  </>
   )
 }
 

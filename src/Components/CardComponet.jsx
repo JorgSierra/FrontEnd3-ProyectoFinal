@@ -1,5 +1,5 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Box, Card, CardActions, CardContent, CardMedia, Checkbox, Typography } from "@mui/material";
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Checkbox, Typography } from "@mui/material";
 import React, { useState }  from "react";
 import { Link } from "react-router-dom";
 import doctor from '../images/doctor.jpg'
@@ -45,7 +45,24 @@ const CardComponet = ({ item }) => {
         <Box>
           <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} checked={fav} onClick={toggleFav}/>
         </Box>
-          <Link to={`/detail/${item.id}`}>Detail</Link>
+        <Button sx={{
+          padding: '0', 
+          backgroundColor: '#1976D2', 
+          '&:hover': {
+            backgroundColor: '#3b8fe2',
+          },
+        }} >
+          <Link style={{ 
+            color:'white', 
+            textDecoration: 'none', 
+            textTransform: 'uppercase', 
+            padding: '.5rem',
+            paddingTop: '.2rem',
+            paddingBottom: '.2rem', 
+            margin: '0',
+            borderRadius: '5px'
+          }} 
+        to={`/detail/${item.id}` }>Detail</Link></Button>
       </CardActions>
     </Card>
   );

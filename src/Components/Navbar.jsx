@@ -1,11 +1,10 @@
-import { AppBar, Box, Button, Container, FormControlLabel, IconButton, Menu, MenuItem, styled, Switch, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Container, FormControlLabel, IconButton, Menu, MenuItem, styled, Switch, Toolbar, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import { ContextGlobal } from './utils/global.context'
 import { Link } from 'react-router-dom';
-
-
+import logoNav from '../images/DH.png'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -74,39 +73,14 @@ const Navbar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  // -----------------------------
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <React.Fragment>
       <AppBar position="static" >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'roboto',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              Odonto
-            </Typography>
+            
+            <img style={{width: '170px'}} src={logoNav} alt='logo'/>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -168,18 +142,14 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <React.Fragment key={page}>
-                  <Link to={(page === 'home') ? '/':`/${page}`} underline='none'>
-                    <Button
-                      key={page}
-                      onClick={(e) => handleCloseNavMenu(page, e)} //mapea botones del nav para pc 
-                      sx={{ my: 2, color: 'white', display: 'block' }}
-                      id="basic-button"
-                      aria-controls={open ? 'basic-menu' : undefined}
-                      aria-haspopup="true"
-                      aria-expanded={open ? 'true' : undefined}
-                    >
-                      {page}
-                    </Button>
+                  <Link style={{
+                    color:'white', 
+                    textDecoration: 'none', 
+                    textTransform: 'uppercase', 
+                    paddingLeft: '1rem',
+                  }} 
+                  to={(page === 'home') ? '/':`/${page}`}>
+                    {page}
                   </Link>
                 </React.Fragment>
               ))}

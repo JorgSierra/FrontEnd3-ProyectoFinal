@@ -39,7 +39,7 @@ const Detail = () => {
     axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(res => { setData(res.data);})
       .catch(err => console.log(err))
-  } ,[]);
+  } ,[id]);
 
 
   return (
@@ -49,7 +49,7 @@ const Detail = () => {
             <TableContainer component={Paper} sx={{ marginTop: '20px' }}>
               <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
-                  <TableRow>
+                  <TableRow sx={{backgroundColor: "#2196f3"}}>
                     <StyledTableCell align="center">Name</StyledTableCell>
                     <StyledTableCell align="center">Email</StyledTableCell>
                     <StyledTableCell align="center">Phone</StyledTableCell>
