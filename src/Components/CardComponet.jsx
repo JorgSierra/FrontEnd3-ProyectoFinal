@@ -17,7 +17,7 @@ const CardComponet = ({ item }) => {
     else{
       const toAdd = {
         id: item.id,
-        userName: item.username,
+        username: item.username,
         name: item.name
       }
       setFavoriteDentist(toAdd);
