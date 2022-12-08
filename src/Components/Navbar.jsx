@@ -180,7 +180,7 @@ const Navbar = () => {
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
-                <React.Fragment>
+                <React.Fragment key={page}>
                   <Link to={(page === 'home') ? '/':`/${page}`} underline='none'>
                     <Button
                       key={page}
@@ -194,30 +194,12 @@ const Navbar = () => {
                       {page}
                     </Button>
                   </Link>
-
-
-                  {/* <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      'aria-labelledby': 'basic-button',
-                    }}
-                  >
-                    {crud.map(item => (
-                      <MenuItem key={item}>
-                        <Link href={`/${item}`} underline='none'  >{item}</Link>
-                      </MenuItem>
-                    ))}
-
-                  </Menu> */}
                 </React.Fragment>
               ))}
             </Box>
 
             <FormControlLabel
-              control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+              control={<MaterialUISwitch sx={{ m: 1 }}/>}
               label=''
               onClick={() => dispatch ({ type: state.nextState })}
             />

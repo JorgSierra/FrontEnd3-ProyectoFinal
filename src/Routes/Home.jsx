@@ -17,20 +17,19 @@ const Home = () => {
       <p>Current state: {state.currentState}</p>
       <p>Next state: {state.nextState}</p>
       <Box sx={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        gap: '1rem',
-        minWidth: '90vw',
-        height: 'auto',
-        flexWrap: 'wrap',
-        margin: '0 auto'
-      }}>
-      {data.map(item => (
-        <CardComponet item={item}/>
-      ))}
-    </Box>
-    </main >
-
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          gap: '1rem',
+          minWidth: '90vw',
+          height: 'auto',
+          flexWrap: 'wrap',
+          margin: '0 auto'
+        }}>
+        {data.map(item => (
+          <CardComponet key={item.id} item={item}/>
+        ))}
+      </Box>
+  </main >
   )
 }
 

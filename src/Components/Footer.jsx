@@ -8,14 +8,14 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer>
+    <div>
       <p>Powered by</p>
       {/* <img src={} alt='DH-logo' /> */}
       {/* <img src={icofacebook} alt='icofacebook' />
       <img src={icoinstagram} alt='icoinstagram' />
       <img src={icotiktok} alt='icotiktok' />
       <img src={icotiwhatsapp} alt='icotiwhatsapp' /> */}
-    </footer>
+    </div>
   )
 }
 
