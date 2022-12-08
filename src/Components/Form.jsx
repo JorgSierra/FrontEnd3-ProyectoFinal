@@ -68,7 +68,7 @@ const Form = () => {
   return (
     <Fragment>
       <Typography variant='h4' sx={{ marginTop: '20px' }}>{'Contact'}</Typography>
-      <FormGroup sx={{ width: '300px', marginTop: '20px', gap: '10px' }}>
+      <FormGroup sx={{ width: '300px', marginTop: '20px', gap: '10px', height:'40vh'}}>
         <FormControl>
           <InputLabel error={!nameIsValid}>{nameIsValid ? 'Full name' : 'Error'}</InputLabel>
           <Input
