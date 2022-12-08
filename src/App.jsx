@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home";
 import Contact from './Routes/Contact'
 import Favs from './Routes/Favs'
-import Detail from './Routes/Favs'
+import Detail from './Routes/Detail';
 import Template from "./Components/Template";
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { ContextGlobal } from './Components/utils/global.context';
@@ -31,7 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/fav" element={<Favs />}></Route>
-          <Route path="/detail" element={<Detail />}></Route>
+          <Route path="/detail/:id" element={<Detail />}></Route>
         </Route>
       </Routes>
     </ThemeProvider>

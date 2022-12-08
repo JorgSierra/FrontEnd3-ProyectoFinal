@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Button, Container, FormControlLabel, IconButton, Menu, MenuItem, styled, Switch, Toolbar, Tooltip, Typography } from '@mui/material'
+import { AppBar, Box, Button, Container, FormControlLabel, IconButton, Menu, MenuItem, styled, Switch, Toolbar, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -62,28 +62,18 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const Navbar = () => {
 
   const pages = ['home', 'contact', 'fav'];
-  const { data, state, dispatch } = useContext(ContextGlobal);
+  const { state, dispatch } = useContext(ContextGlobal);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
     //maneja la hamburguesa
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
   // maneja vista movil
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-
   // -----------------------------
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -96,14 +86,11 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-
-
   return (
     <React.Fragment>
       <AppBar position="static" >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
             <Typography
               variant="h6"
               noWrap
@@ -203,37 +190,6 @@ const Navbar = () => {
               label=''
               onClick={() => dispatch ({ type: state.nextState })}
             />
-
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {/* mapea menu usuario en las dos vistas */}
-                {
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="left">Hola</Typography>
-                  </MenuItem>
-                }
-              </Menu>
-            </Box>
           </Toolbar>
         </Container>
       </AppBar>
