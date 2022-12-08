@@ -1,17 +1,28 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, Card, CardActions, CardContent, CardMedia, Checkbox, Typography } from "@mui/material";
-import React from "react";
+import React, { useState }  from "react";
 import { Link } from "react-router-dom";
 import doctor from '../images/doctor.jpg'
+import { isFavorite, setFavoriteDentist, remFavoriteDentist } from "./utils/localStore"; 
 
 const CardComponet = ({ item }) => {
-
+  const [fav, setFav] = useState(isFavorite(item.id));
   const label = { inputprops: { 'aria-label': 'Checkbox demo' } };
 
-  const addFav = ()=>{
-    console.log("funciona")
-    /* Ademas deberan integrar la logica para guardar cada Card en el localStorage */
-    // Aqui iria la logica para agregar la Card en el localStorage
+  const toggleFav = ()=>{
+    if (isFavorite(item.id)){
+      remFavoriteDentist(item.id);
+      setFav(false);
+    }
+    else{
+      const toAdd = {
+        id: item.id,
+        userName: item.username,
+        name: item.name
+      }
+      setFavoriteDentist(toAdd);
+      setFav(true);
+    }
   }
 
   return (
@@ -32,7 +43,7 @@ const CardComponet = ({ item }) => {
       </CardContent>
       <CardActions>
         <Box>
-          <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+          <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} checked={fav} onClick={toggleFav}/>
         </Box>
           <Link to={`/detail/${item.id}`}>Detail</Link>
       </CardActions>
