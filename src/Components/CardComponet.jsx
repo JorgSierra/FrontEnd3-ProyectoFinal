@@ -29,7 +29,7 @@ const CardComponet = ({ item }) => {
     <Card sx={{ minWidth: 300 }} >
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt={`Doctor: ${item.name}`}
         height="140"
         image={doctor}
       />

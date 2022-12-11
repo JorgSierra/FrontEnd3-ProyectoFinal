@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import React, { useContext } from 'react'
+import React, { useContext, } from 'react'
 import { ContextGlobal } from '../Components/utils/global.context';
 import CardComponet from '../Components/CardComponet';
 
@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1 style={{marginTop: 'auto', paddingTop: '5rem'}}>Home</h1>
       <Box sx={{
           display: 'flex',
           justifyContent: 'space-evenly',

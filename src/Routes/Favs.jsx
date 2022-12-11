@@ -10,7 +10,7 @@ const Favs = () => {
 
   return (
     <>
-      <h1>Favorite Dentists</h1>
+      <h1 style={{marginTop: 'auto'}}>Favorite Dentists</h1>
       <Box sx={{
           display: 'flex',
           justifyContent: 'space-evenly',

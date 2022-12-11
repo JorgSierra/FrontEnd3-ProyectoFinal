@@ -44,12 +44,12 @@ const Detail = () => {
 
   return (
     <>
-      <h1>{`Detail Dentist ID : ${id}`}</h1>
+      <h1 style={{marginTop: 'auto'}}>{`Detail Dentist ID : ${id}`}</h1>
       <React.Fragment>
             <TableContainer component={Paper} sx={{ marginTop: '20px' }}>
-              <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <Table  sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
-                  <TableRow sx={{backgroundColor: "#2196f3"}}>
+                  <TableRow > 
                     <StyledTableCell align="center">Name</StyledTableCell>
                     <StyledTableCell align="center">Email</StyledTableCell>
                     <StyledTableCell align="center">Phone</StyledTableCell>

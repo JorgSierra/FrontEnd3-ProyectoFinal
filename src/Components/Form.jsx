@@ -17,8 +17,6 @@ const Form = () => {
   const nameValidation = (e) => {
     if (e.target.value.length >= 1 && e.target.value.length <= 5) {
       setNameIsValid(false)
-      console.log(e.target.value.length);
-      console.log(nameIsValid);
     }
     else {
       setNameIsValid(true);
@@ -72,6 +70,7 @@ const Form = () => {
         <FormControl>
           <InputLabel error={!nameIsValid}>{nameIsValid ? 'Full name' : 'Error'}</InputLabel>
           <Input
+            color='success'
             id='name'
             error={!nameIsValid}
             name='Full name'

@@ -76,7 +76,7 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="static" >
+      <AppBar position="fixed" >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             
@@ -154,7 +154,6 @@ const Navbar = () => {
                 </React.Fragment>
               ))}
             </Box>
-
             <FormControlLabel
               control={<MaterialUISwitch sx={{ m: 1 }}/>}
               label=''
