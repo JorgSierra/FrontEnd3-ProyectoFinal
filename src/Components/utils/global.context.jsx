@@ -39,7 +39,6 @@ export const ContextProvider = ({ children }) => {
   }
 
   const getData = () => {
-    console.log("Making API call ...");
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then(res => { setData(res.data); })
       .catch(err => console.log(err))
