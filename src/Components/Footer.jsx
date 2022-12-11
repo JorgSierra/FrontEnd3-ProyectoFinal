@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import { Box, createTheme, ThemeProvider, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import dh from '../images/DH.png'
 import icofacebook from '../images/ico-facebook.png'
 import icoinstagram from '../images/ico-instagram.png'

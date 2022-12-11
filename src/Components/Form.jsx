@@ -70,7 +70,6 @@ const Form = () => {
         <FormControl>
           <InputLabel error={!nameIsValid}>{nameIsValid ? 'Full name' : 'Error'}</InputLabel>
           <Input
-            color='success'
             id='name'
             error={!nameIsValid}
             name='Full name'
