@@ -1,4 +1,4 @@
-# Certified developer tech - Front end 3 - Proyecto Final
+# Front end 3 - Proyecto Final
 
 Examen Final de Frontend III
 
