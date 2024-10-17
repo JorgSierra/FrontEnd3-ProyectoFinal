@@ -1,8 +1,12 @@
 # Certified developer tech - Front end 3 - Proyecto Final
 
-Examen Final de Frontend III: da un vistazo al [proyecto](https://ctd-esp-fe3-final-orcin.vercel.app/).
+Examen Final de Frontend III
 
-## Indice
+## Prueba la app
+
+Da un vistazo al **[proyecto](https://ctd-esp-fe3-final-orcin.vercel.app/)**.
+
+### Indice
 
 - [Requisitos](#requisitos)
   - [Condiciones mínimas de aprobación](#condiciones-mínimas-de-aprobación)
@@ -14,9 +18,9 @@ Examen Final de Frontend III: da un vistazo al [proyecto](https://ctd-esp-fe3-fi
   - [Fecha de Entrega](#fecha-de-entrega)
   - [Formato de Entrega](#formato-de-entrega)
 
-## Requisitos
+### Requisitos
 
-### Condiciones de aprobación
+#### Condiciones de aprobación
 
 Las siguientes condiciones son requisitos mínimos necesarios para la aprobación del final:
 
@@ -27,7 +31,7 @@ Las siguientes condiciones son requisitos mínimos necesarios para la aprobació
 - Se espera que la página de Contacto, contenga los flujos de validación necesarios (minimo 2 validaciones), para un correcto submit del formulario.
 - En los casos en que se requiera dar estilos a componentes, deberá realizarse teniendo en cuenta el theme del contexto global.
 
-### Aspectos que modifican la valoración final de la nota
+#### Aspectos que modifican la valoración final de la nota
 
 Los siguientes aspectos son extras al requisito mínimo de aprobación que serán tenidos en cuenta para aumentar la nota final, siempre y cuando su implementación sea correcta:
 
@@ -48,15 +52,15 @@ Los siguientes aspectos son extras al requisito mínimo de aprobación que será
 
 - Se prestará especial atención al uso de buenas prácticas, mejoras de performance (implementando useMemo) y la reutilizacion de codigo
 
-## Funcionalidades
+### Funcionalidades
 
 Ver [Funcionalidades](docs/funcionalidades.md).
 
-## Desarrollo
+### Desarrollo
 
 Ver [Desarrollo](docs/desarrollo.md).
 
-## API
+### API
 
 La API a utilizar sera la siguiente:
 `https://jsonplaceholder.typicode.com/users`
@@ -64,7 +68,7 @@ La API a utilizar sera la siguiente:
 Y para cada dentista en especifico:
 `https://jsonplaceholder.typicode.com/users/:id`
 
-### Formato de Entrega
+#### Formato de Entrega
 
 - No deberan cambiar los nombres ni ubicacion de las variables/componentes/context que vienen con el repo base
 
